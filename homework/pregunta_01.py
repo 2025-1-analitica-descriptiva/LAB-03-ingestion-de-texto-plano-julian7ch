@@ -11,15 +11,21 @@ from homework.extraerDatosDesdeFilas import extraerDatosDesdeFilas
 
 def pregunta_01():
     lineas = cargaYLimpiezaFilas()
-
+    # print(lineas)
     data = extraerDatosDesdeFilas(lineas)
-
+    # print(data)
     dataFrame = pd.DataFrame(data, columns=[
         'cluster',
         'cantidad_de_palabras_clave',
         'porcentaje_de_palabras_clave',
         'principales_palabras_clave'
     ])
+
+    # pd.set_option('display.max_colwidth', None)  # None = sin límite de caracteres por celda
+    # pd.set_option('display.max_columns', None)   # Muestra todas las columnas
+    # pd.set_option('display.width', 0)            # Autoajusta el ancho
+    # print(dataFrame['principales_palabras_clave'].to_list())
+
     print(dataFrame)
     return dataFrame
 

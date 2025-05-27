@@ -1,3 +1,5 @@
 import re
+
 def filaNueva(linea):
-    return re.match(r'^\d+', linea) is not None
+    # Detecta si la línea empieza con uno o más dígitos seguidos de espacios (ej: "1     105")
+    return bool(re.match(r'^\d+\s+', linea))

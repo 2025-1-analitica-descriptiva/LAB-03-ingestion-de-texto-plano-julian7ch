@@ -4,17 +4,17 @@ def agruparFila():
     lineas = cargaYLimpiezaFilas()
 
     filas = []
-    fila_actual = ''
+    filaActual = ''
 
     for linea in lineas:
         if filaNueva(linea):
-            if fila_actual:
-                filas.append(fila_actual.strip())
-            fila_actual = linea
+            if filaActual:
+                filas.append(filaActual.strip())
+            filaActual = linea
         else:
-            fila_actual += ' ' + linea
+            filaActual += ' ' + linea
 
-    if fila_actual:
-        filas.append(fila_actual.strip())
+    if filaActual:
+        filas.append(filaActual.strip())
     
     return filas
